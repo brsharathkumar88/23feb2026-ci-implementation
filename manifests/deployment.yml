@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: prdappimage1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prdappimage1
+  template:
+    metadata:
+      labels:
+        app: prdappimage1 
+    spec:
+      containers:
+        - name: prdappimage1 
+          image: containerregprdus2.azurecr.io/prdappimage1
+          ports:
+          - containerPort: 80
